@@ -1,11 +1,12 @@
 import './App.css';
-import Homepage from './Homepage.js'
+import Homepage from './Homepage.js';
+import Navbar from './Navbar/Navbar.js';
 function App() {
   return (
     <>
-    {/* // navbar */}
-  <Homepage> </Homepage>
-  </>
+      <Navbar></Navbar>
+      <Homepage> </Homepage>
+    </>
   );
 }
 
