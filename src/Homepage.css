@@ -1,5 +1,5 @@
 .profile-pic {
-  margin-top: 40px;
+  margin-top: 50px;
   height: 600px;
   border-top-left-radius: 250px;
   border-top-right-radius: 250px;
@@ -74,5 +74,5 @@
   text-align: center;
   font-weight: 600;
   font-family: Gopher, serif;
-  margin-top: 15px;
+  margin-top: 25px;
 }

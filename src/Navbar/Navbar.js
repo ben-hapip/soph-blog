@@ -11,6 +11,8 @@ function Navbar() {
   const handleChange = () => {
     setDark(!dark);
   };
+  const str = '☀';
+  const str2 = '☽';
   console.log(handleChange);
   return (
     <div
@@ -29,22 +31,12 @@ function Navbar() {
 
       <div className="toggle" style={{ marginRight: 30 }}>
         <Switch
+          color={'teal'}
           checked={dark}
           onChange={handleChange}
-          onLabel="🌚"
-          offLabel="🌞"
+          onLabel={str2}
+          offLabel={str}
           size="xl"
-          style={{
-            root: {
-              backgroundColor: theme.colors.sophieOrange[0],
-              color: theme.colors.sophieOrange[0]
-            },
-
-            input: {
-              backgroundColor: theme.colors.sophieOrange[0],
-              color: theme.colors.sophieOrange[0]
-            }
-          }}
         />
       </div>
     </div>
