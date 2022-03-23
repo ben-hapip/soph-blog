@@ -1,11 +1,14 @@
+import { Button, useMantineTheme } from '@mantine/core';
 import './Homepage.css';
 import logo from './SJ-logo.png';
 import sophia from './sophia-profile.jpg';
 
 function Homepage() {
+  const theme = useMantineTheme();
   return (
     <>
       <div className="home-page">
+        <Button style={{ background: theme.colors.sophieOrange[0] }}>AY YO</Button>
         <img className="logo" src={logo}></img>
         <div className="content">
           <img className="profile-pic" src={sophia}></img>
