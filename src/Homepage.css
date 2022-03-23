@@ -1,11 +1,5 @@
-.logo {
-  height: 120px;
-  margin-left: 50px;
-  margin-top: 40px;
-}
-
 .profile-pic {
-  margin-top: 50px;
+  margin-top: 40px;
   height: 600px;
   border-top-left-radius: 250px;
   border-top-right-radius: 250px;
@@ -14,12 +8,11 @@
 }
 
 .home-page {
-  background-color: rgb(255, 251, 246);
-  color: rgb(180, 83, 19);
+  color: rgb(0, 0, 0);
   height: 100vh;
-  font-family: ivypresto-headline, serif;
-  font-weight: 400;
-  font-style: italic;
+  font-family: Helvetica, serif;
+  max-height: 800px;
+  overflow: hidden;
 }
 
 .content {
@@ -31,11 +24,14 @@
 
 .about-me-section {
   justify-self: start;
-  margin-top: 120px;
+  margin-top: 175px;
 }
 
 .about-me-header {
   font-size: 75px;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-family: Gopher, serif;
 }
 
 .about-me-inner {
@@ -45,13 +41,12 @@
 }
 .about-me-text {
   font-size: 20px;
-  color: #2b1103;
-  font-family: Helvetica, Sans-Serif;
+  color: #000000;
   font-style: normal;
 }
 
 .button-container {
-  margin-top: 10px;
+  margin-top: 30px;
   text-align: center;
   width: 65%;
   padding-left: 75px;
@@ -59,12 +54,12 @@
 
 .button {
   color: rgb(255, 251, 246);
-  background-color: rgb(180, 83, 19);
-  border-top-left-radius: 20px;
-  border-top-right-radius: 0px;
-  border-bottom-right-radius: 20px;
-  border-bottom-left-radius: 0px;
-  padding: 20px;
+  background-color: #f7aa9a;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  border-bottom-left-radius: 50px;
+  padding: 15px;
   width: 180px;
   border-color: white;
   border-style: solid;
@@ -72,4 +67,12 @@
   font-family: Helvetica, sans-serif, sans-serif;
   font-weight: 400;
   font-style: normal;
+}
+
+.header {
+  font-size: 125px;
+  text-align: center;
+  font-weight: 600;
+  font-family: Gopher, serif;
+  margin-top: 15px;
 }
