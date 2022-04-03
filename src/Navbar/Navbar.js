@@ -1,46 +1,51 @@
 import { Switch, useMantineTheme } from '@mantine/core';
-import { useState } from 'react';
+import { PropTypes } from 'prop-types';
+import { useContext } from 'react';
+import { NavLink } from 'react-router-dom';
+import { ThemeContext } from '../App';
 import logo from '../SJlogo.png';
 import './Navbar.css';
 
-function Navbar() {
+function Navbar({ toggleTheme }) {
   const theme = useMantineTheme();
-
-  const navOptions = ['Portfolio', 'Contact'];
-  const [dark, setDark] = useState(false);
-  const handleChange = () => {
-    setDark(!dark);
-  };
+  const darkTheme = useContext(ThemeContext);
   const str = '☀';
   const str2 = '☽';
-  console.log(handleChange);
   return (
     <div
       className="nav-grid"
       style={{
-        backgroundColor: dark ? theme.colors.sophiePink[0] : theme.colors.sophieGreen[0]
+        backgroundColor: theme.colors.sophieTheme[0]
       }}>
-      <div style={{ marginLeft: 30, marginTop: 10, marginBottom: 10 }}>
-        <img className="logo" src={logo}></img>
-      </div>
-      {navOptions.map((option, index) => (
-        <div key={index} style={{ margin: 15 }}>
-          <span>{option}</span>
+      {/* TODO: ADD ACTIVE CLASSES FOR LINKS :D */}
+      <NavLink to="/">
+        <div style={{ marginLeft: 30, marginTop: 10, marginBottom: 10 }}>
+          <img className="logo" src={logo}></img>
         </div>
-      ))}
+      </NavLink>
+      <div>
+        <NavLink to="/portfolio" style={{ margin: 15 }}>
+          Portfolio
+        </NavLink>
+      </div>
 
+      <div>
+        <NavLink to="/contact" style={{ margin: 15 }}>
+          Contact
+        </NavLink>
+      </div>
       <div className="toggle" style={{ marginRight: 30 }}>
         <Switch
-          color={'teal'}
-          checked={dark}
-          onChange={handleChange}
-          onLabel={str2}
-          offLabel={str}
-          size="xl"
+          checked={darkTheme}
+          onChange={toggleTheme}
+          label={darkTheme ? str2 : str}
+          size="lg"
         />
       </div>
     </div>
   );
 }
-
+Navbar.propTypes = {
+  toggleTheme: PropTypes.func
+};
 export default Navbar;

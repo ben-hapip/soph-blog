@@ -1,8 +1,9 @@
+import { useMantineTheme } from '@mantine/core';
 import './Homepage.css';
 import sophia from './sophia-profile.jpg';
 
 function Homepage() {
-  // const theme = useMantineTheme();
+  const theme = useMantineTheme();
   return (
     <>
       <div className="home-page">
@@ -15,14 +16,20 @@ function Homepage() {
               <div className="about-me-text">
                 {`             
                 I'm a Graphic Designer based in Bismarck, ND and am very passionate
-                about digital illustration and photography. I am currently student at Bismarck
+                about digital illustration and photography. I am currently a student at Bismarck
                 State College majoring in Graphic Design and Communications. I have always been
                 creative but didn't find a love for Graphic Design until my senior year of high
                 school. Besides design I enjoys playing piano, hiking, camping, and spending time
                 with my family and friends.`}
               </div>
               <div className="button-container">
-                <button className="button">View Portfolio</button>
+                <button
+                  className="button"
+                  style={{
+                    backgroundColor: theme.colors.sophieTheme[0]
+                  }}>
+                  View Portfolio
+                </button>
               </div>
             </div>
           </div>
