@@ -15,7 +15,7 @@ function Navbar({ toggleTheme }) {
     <div
       className="nav-grid"
       style={{
-        backgroundColor: theme.colors.sophieTheme[0]
+        backgroundColor: theme.colors.sophieNavTheme[0]
       }}>
       {/* TODO: ADD ACTIVE CLASSES FOR LINKS :D */}
       <NavLink to="/">

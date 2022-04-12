@@ -1,19 +1,39 @@
 import { useMantineTheme } from '@mantine/core';
-import './Homepage.css';
+import './App.css';
 import sophia from './sophia-profile.jpg';
 
 function Homepage() {
   const theme = useMantineTheme();
   return (
     <>
-      <div className="home-page">
-        <div className="header">SOPHIA JILEK DESIGNS</div>
+      <div
+        className="home-page"
+        style={{
+          backgroundColor: theme.colors.sophieBackgroundTheme[0]
+        }}>
+        <div
+          className="header"
+          style={{
+            color: theme.colors.sophieMainTheme[0]
+          }}>
+          SOPHIA JILEK DESIGNS
+        </div>
         <div className="content">
           <img className="profile-pic" src={sophia}></img>
           <div className="about-me-section">
-            <div className="about-me-header">About Me</div>
+            <div
+              className="about-me-header"
+              style={{
+                color: theme.colors.sophieTextTheme[0]
+              }}>
+              About Me
+            </div>
             <div className="about-me-inner">
-              <div className="about-me-text">
+              <div
+                className="about-me-text"
+                style={{
+                  color: theme.colors.sophieTextTheme[0]
+                }}>
                 {`             
                 I'm a Graphic Designer based in Bismarck, ND and am very passionate
                 about digital illustration and photography. I am currently a student at Bismarck
@@ -26,7 +46,8 @@ function Homepage() {
                 <button
                   className="button"
                   style={{
-                    backgroundColor: theme.colors.sophieTheme[0]
+                    backgroundColor: theme.colors.sophieMainTheme[0],
+                    borderColor: theme.colors.sophieMainTheme[0]
                   }}>
                   View Portfolio
                 </button>

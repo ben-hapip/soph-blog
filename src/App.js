@@ -21,8 +21,10 @@ function App() {
           primaryColor: darkTheme ? 'orange' : 'teal',
           colors: {
             // Add your color
-            sophieOrange: ['#b45313'],
-            sophieTheme: darkTheme ? ['#F7AA9A'] : ['#C9C43E']
+            sophieMainTheme: darkTheme ? ['#9A3D35'] : ['#F6A999'],
+            sophieTextTheme: darkTheme ? ['#DEDFE0'] : ['#140F11'],
+            sophieNavTheme: darkTheme ? ['#140F11'] : ['#C9C43E'],
+            sophieBackgroundTheme: darkTheme ? ['#140F11'] : ['#FFFFFF']
           }
         }}>
         <BrowserRouter>
