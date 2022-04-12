@@ -18,7 +18,7 @@ function App() {
     <ThemeContext.Provider value={darkTheme}>
       <MantineProvider
         theme={{
-          primaryColor: darkTheme ? 'orange' : 'teal',
+          primaryColor: 'gray',
           colors: {
             // Add your color
             sophieMainTheme: darkTheme ? ['#9A3D35'] : ['#F6A999'],

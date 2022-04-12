@@ -10,14 +10,29 @@
 .portfolio-container{
   display: grid;
   grid-template-columns: repeat(4,275px);
-  grid-gap: 10px;
+  grid-gap: 75px;
   box-sizing: border-box;
   height: 200px;
   width: 100%;
-    justify-content: center;
-  border-color: aqua;
+  justify-content: center;
   text-align: center;
+  margin-top: 50;
 }
+
+.portfolioItem {
+  border: solid;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.modalBody {
+  display:grid;
+  column-gap: 20px;
+  grid-template-columns: 1fr 1fr;
+}
+
 .home-page {
   color: rgb(0, 0, 0);
   /* height: 100vh; */

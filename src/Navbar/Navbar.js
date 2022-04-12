@@ -9,8 +9,8 @@ import './Navbar.css';
 function Navbar({ toggleTheme }) {
   const theme = useMantineTheme();
   const darkTheme = useContext(ThemeContext);
-  const str = '☀';
-  const str2 = '☽';
+  // const str = '☀';
+  // const str2 = '☽';
   return (
     <div
       className="nav-grid"
@@ -38,8 +38,18 @@ function Navbar({ toggleTheme }) {
         <Switch
           checked={darkTheme}
           onChange={toggleTheme}
-          label={darkTheme ? str2 : str}
           size="lg"
+          styles={{
+            input: {
+              backgroundColor: theme.colors.sophieMainTheme[0],
+              borderColor: theme.colors.sophieMainTheme[0],
+              borderStyle: 'solid',
+              ':checked': {
+                backgroundColor: theme.colors.sophieMainTheme[0],
+                borderColor: theme.colors.sophieMainTheme[0]
+              }
+            }
+          }}
         />
       </div>
     </div>
