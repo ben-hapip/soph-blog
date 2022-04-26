@@ -3,13 +3,8 @@
   background-color: rgb(180, 83, 19);
   color: rgb(255, 251, 246);
   align-items: center;
-
   gap: 70px;
 }
-
-/* .nav-grid > div {
-  margin: 15px;
-/* } */
 
 .nav-grid > div > a {
   color:white;
@@ -18,6 +13,7 @@
   font-size: 20px;
   font-family: Helvetica, serif;
   font-weight: 500;
+  
 }
 
 .toggle {
@@ -26,4 +22,42 @@
 
 .logo {
   height: 70px;
+}
+
+.mobileLink {
+  color:white;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 20px;
+  font-family: Helvetica, serif;
+  font-weight: 500;
+}
+@media (max-width: 600px) {
+  .nav-grid { 
+    width:100%;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+  .nav-grid > div > a {}
+  .toggle {}
+  .logo {}
+}
+
+.fadeInMenu {
+  animation: fadeInMenu .75s;
+  -webkit-animation: fadeInMenu .75s;
+  -moz-animation: fadeInMenu .75s;
+  -o-animation: fadeInMenu .75s;
+  -ms-animation: fadeInMenu .75s;
+}
+@keyframes fadeInMenu {
+  0% {
+    opacity: 0;
+    transform: translateY(-40px);
+}
+100% {
+    opacity: 1;
+    transform: translateY(0);
+}
 }

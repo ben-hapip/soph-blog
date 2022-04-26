@@ -4,7 +4,7 @@ import yonder from '../images/yonderweb.png';
 import { PortfolioItem } from '../PortfolioItem/PortfolioItem.js';
 export const Portfolio = () => {
   const theme = useMantineTheme();
-
+  const yo = [yonder, yonder, yonder, yonder, yonder];
   return (
     <>
       <div
@@ -18,12 +18,13 @@ export const Portfolio = () => {
         <PortfolioItem
           imagePreview={yonderPreview}
           image={yonder}
+          images={yo}
           title="YONDER"
           description="Goodness this yonder project was bussin, there is some respecting levels of bussin bussin and that toll house cookie dough made me say AY YO MR JOE BIDEN W+TAKE ME OUT TO LINNER"
         />
+        {/* <PortfolioItem />
         <PortfolioItem />
-        <PortfolioItem />
-        <PortfolioItem />
+        <PortfolioItem /> */}
 
         <div>asd</div>
         <div>asd</div>

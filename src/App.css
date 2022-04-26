@@ -5,9 +5,10 @@
   border-top-right-radius: 250px;
   border-bottom-right-radius: 0px;
   border-bottom-left-radius: 0px;
-}
 
+}
 .portfolio-container{
+  /* TODO THIS NEEDS SOME SERIOUS LOVE */
   display: grid;
   grid-template-columns: repeat(4,275px);
   grid-gap: 75px;
@@ -25,12 +26,11 @@
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
   border-bottom-left-radius: 8px;
+  cursor:pointer;
 }
 
 .modalBody {
-  display:grid;
-  column-gap: 20px;
-  grid-template-columns: 1fr 1fr;
+ display: flex;
 }
 
 .home-page {
@@ -91,6 +91,7 @@
   font-family: Helvetica, sans-serif, sans-serif;
   font-weight: 400;
   font-style: normal;
+  cursor:pointer;
 }
 
 .header {
@@ -100,3 +101,61 @@
   font-family: Gopher, serif;
   margin-top: 25px;
 }
+.fade-in-image {
+  animation: fadeIn 2s;
+  -webkit-animation: fadeIn 2s;
+  -moz-animation: fadeIn 2s;
+  -o-animation: fadeIn 2s;
+  -ms-animation: fadeIn 2s;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-40px);
+}
+100% {
+    opacity: 1;
+    transform: translateY(0);
+}
+}
+@media (max-width: 600px) {
+  .profile-pic{ margin-top: 0px; height:510px}
+  .portfolio-container{}
+  .portfolioItem {}
+  .modalBody {flex-direction: column;}
+  .home-page {}
+  .content {   
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .about-me-section {margin-top: 10px; }
+  .about-me-header {    
+    font-size: 38px;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-family: Gopher, serif;
+    text-align: center;
+    margin-bottom: 3px;
+  }
+  .about-me-inner {
+    padding-left: 0px;
+    width: initial;
+    margin-top:0;
+  }
+  .about-me-text {
+    padding-right: 30px;
+    padding-left: 35px;
+    text-align: left;
+  }
+  .button-container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    width: initial;
+    padding-left: 0;
+  }
+  .button {}
+  .header {font-size: 32px;}
+  .fade-in-image {}
+ }

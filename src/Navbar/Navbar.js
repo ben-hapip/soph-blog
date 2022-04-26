@@ -1,17 +1,18 @@
-import { Switch, useMantineTheme } from '@mantine/core';
+import { Burger, useMantineTheme } from '@mantine/core';
+import { useViewportSize } from '@mantine/hooks';
 import { PropTypes } from 'prop-types';
-import { useContext } from 'react';
+import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { ThemeContext } from '../App';
 import logo from '../SJlogo.png';
 import './Navbar.css';
 
-function Navbar({ toggleTheme }) {
+function Navbar() {
+  // TODO: add toggle them when ready
   const theme = useMantineTheme();
-  const darkTheme = useContext(ThemeContext);
-  // const str = '☀';
-  // const str2 = '☽';
-  return (
+  // const darkTheme = useContext(ThemeContext);
+  const { width } = useViewportSize();
+  const [open, setOpen] = useState(false);
+  return width > 600 ? (
     <div
       className="nav-grid"
       style={{
@@ -25,16 +26,17 @@ function Navbar({ toggleTheme }) {
       </NavLink>
       <div>
         <NavLink to="/portfolio" style={{ margin: 15 }}>
-          Portfolio
+          portfolio
         </NavLink>
       </div>
 
       <div>
         <NavLink to="/contact" style={{ margin: 15 }}>
-          Contact
+          contact
         </NavLink>
       </div>
-      <div className="toggle" style={{ marginRight: 30 }}>
+
+      {/* <div className="toggle" style={{ marginRight: 30 }}>
         <Switch
           checked={darkTheme}
           onChange={toggleTheme}
@@ -51,7 +53,42 @@ function Navbar({ toggleTheme }) {
             }
           }}
         />
+      </div> */}
+    </div>
+  ) : (
+    <div>
+      <div
+        className="nav-grid"
+        style={{
+          backgroundColor: theme.colors.sophieNavTheme[0]
+        }}>
+        <div>
+          <img className="logo" src={logo}></img>
+        </div>
+        <Burger color={'white'} opened={open} onClick={() => setOpen(!open)} />
       </div>
+      {open && (
+        <div
+          className="fadeInMenu"
+          style={{
+            backgroundColor: theme.colors.sophieNavTheme[0]
+          }}>
+          <NavLink to="/" className="mobileLink">
+            home
+          </NavLink>
+          <div>
+            <NavLink to="/portfolio" className="mobileLink">
+              portfolio
+            </NavLink>
+          </div>
+
+          <div>
+            <NavLink to="/contact" className="mobileLink">
+              contact
+            </NavLink>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

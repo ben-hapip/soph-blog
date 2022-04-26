@@ -1,9 +1,12 @@
 import { useMantineTheme } from '@mantine/core';
+import { useViewportSize } from '@mantine/hooks';
+import { Link } from 'react-router-dom';
 import './App.css';
 import sophia from './sophia-profile.jpg';
 
 function Homepage() {
   const theme = useMantineTheme();
+  const { width } = useViewportSize();
   return (
     <>
       <div
@@ -19,7 +22,11 @@ function Homepage() {
           SOPHIA JILEK DESIGNS
         </div>
         <div className="content">
-          <img className="profile-pic" src={sophia}></img>
+          {width < 600 ? (
+            <img className="profile-pic" src={sophia} width={350}></img>
+          ) : (
+            <img className="profile-pic" src={sophia}></img>
+          )}
           <div className="about-me-section">
             <div
               className="about-me-header"
@@ -36,21 +43,24 @@ function Homepage() {
                 }}>
                 {`             
                 I'm a Graphic Designer based in Bismarck, ND and am very passionate
-                about digital illustration and photography. I am currently a student at Bismarck
-                State College majoring in Graphic Design and Communications. I have always been
-                creative but didn't find a love for Graphic Design until my senior year of high
-                school. Besides design I enjoys playing piano, hiking, camping, and spending time
+                about digital illustration and photography. I've been a creative since birth, 
+                but now I'm a Bismarck State College graduate with an associate degree in 
+                graphic design & communications, hard worker and a free spirit. 
+                Besides design I enjoys playing piano, hiking, camping, and spending time
                 with my family and friends.`}
               </div>
+
               <div className="button-container">
-                <button
-                  className="button"
-                  style={{
-                    backgroundColor: theme.colors.sophieMainTheme[0],
-                    borderColor: theme.colors.sophieMainTheme[0]
-                  }}>
-                  View Portfolio
-                </button>
+                <Link to="/portfolio">
+                  <button
+                    className="button"
+                    style={{
+                      backgroundColor: theme.colors.sophieMainTheme[0],
+                      borderColor: theme.colors.sophieMainTheme[0]
+                    }}>
+                    View Portfolio
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
