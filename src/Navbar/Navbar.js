@@ -18,7 +18,6 @@ function Navbar() {
       style={{
         backgroundColor: theme.colors.sophieNavTheme[0]
       }}>
-      {/* TODO: ADD ACTIVE CLASSES FOR LINKS :D */}
       <NavLink to="/">
         <div style={{ marginLeft: 30, marginTop: 10, marginBottom: 10 }}>
           <img className="logo" src={logo}></img>
