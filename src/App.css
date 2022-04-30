@@ -108,6 +108,35 @@
   cursor: pointer;
 }
 
+.submit-button {
+  color: rgb(255, 251, 246);
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  border-bottom-left-radius: 50px;
+  padding: 15px;
+  width: 115px;
+  border-style: solid;
+  font-size: 20px;
+  font-family: Helvetica, sans-serif, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  cursor: pointer;
+}
+
+button:disabled,
+button[disabled] {
+  cursor: not-allowed;
+  background-color: grey;
+}
+
+.socials {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+}
+
+
 .header {
   font-size: 125px;
   text-align: center;
