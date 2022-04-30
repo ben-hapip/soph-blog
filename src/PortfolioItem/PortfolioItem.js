@@ -48,6 +48,9 @@ export const PortfolioItem = ({ image, images, description, title, imagePreview 
         onClick={() => setModalOpen(true)}
         style={{ borderColor: theme.colors.sophieBackgroundTheme[0] }}
         fit="contain"
+        styles={{
+          root: { cursor: 'pointer' }
+        }}
       />
       <Modal
         opened={modalOpen}

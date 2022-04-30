@@ -73,9 +73,12 @@ function Navbar() {
             backgroundColor: theme.colors.sophieNavTheme[0]
           }}
           onClick={() => setOpen(false)}>
-          <NavLink to="/" className="mobileLink">
-            home
-          </NavLink>
+          <div onClick={() => setOpen(false)}>
+            <NavLink to="/" className="mobileLink">
+              home
+            </NavLink>
+          </div>
+
           <div onClick={() => setOpen(false)}>
             <NavLink to="/portfolio" className="mobileLink">
               portfolio
