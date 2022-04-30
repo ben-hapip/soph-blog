@@ -71,17 +71,18 @@ function Navbar() {
           className="fadeInMenu"
           style={{
             backgroundColor: theme.colors.sophieNavTheme[0]
-          }}>
+          }}
+          onClick={() => setOpen(false)}>
           <NavLink to="/" className="mobileLink">
             home
           </NavLink>
-          <div>
+          <div onClick={() => setOpen(false)}>
             <NavLink to="/portfolio" className="mobileLink">
               portfolio
             </NavLink>
           </div>
 
-          <div>
+          <div onClick={() => setOpen(false)}>
             <NavLink to="/contact" className="mobileLink">
               contact
             </NavLink>

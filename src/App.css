@@ -13,11 +13,11 @@
   grid-template-columns: repeat(4, 275px);
   grid-gap: 75px;
   box-sizing: border-box;
-  height: 200px;
   width: 100%;
   justify-content: center;
   text-align: center;
-  margin-top: 50;
+  margin-top: 50px;
+  margin-bottom: 20px;
 }
 
 .MuiMobileStepper-dotActive {
@@ -52,7 +52,6 @@
   /* height: 100vh; */
   font-family: Helvetica, serif;
   /* max-height: 800px; */
-  overflow: hidden;
 }
 
 .content {

@@ -5,7 +5,7 @@ import { PropTypes } from 'prop-types';
 import { useState } from 'react';
 import SwipeableViews from 'react-swipeable-views';
 
-export const PortfolioItem = ({ image, images, description, title, imagePreview, imageFit }) => {
+export const PortfolioItem = ({ image, images, description, title, imagePreview }) => {
   const theme = useMantineTheme();
   const [modalOpen, setModalOpen] = useState(false);
   const [activeStep, setActiveStep] = useState(0);
@@ -25,29 +25,18 @@ export const PortfolioItem = ({ image, images, description, title, imagePreview,
   };
   const isMobile = viewPortWidth < 600;
 
-  const renderInside = (imageToShow) => {
+  const renderInside = (imageToShow, imageFit, index) => {
     return isMobile ? (
-      <div
-        style={{
-          width: 300,
-          height: 250,
-          marginLeft: 'auto',
-          marginRight: 'auto',
-          overflow: 'hidden'
-        }}>
-        <Image src={imageToShow} height={200} alt="Failed Image" fit={imageFit} />
-      </div>
+      <Image key={index} src={imageToShow} height={200} alt="Failed Image" fit={imageFit} />
     ) : (
-      <div
-        style={{
-          width: 600,
-          height: 410,
-          marginLeft: 'auto',
-          marginRight: 'auto',
-          overflow: 'hidden'
-        }}>
-        <Image src={imageToShow} alt="Failed Image" height={400} fit={imageFit} />
-      </div>
+      <Image
+        key={index}
+        src={imageToShow}
+        alt="Failed Image"
+        width={600}
+        height={400}
+        fit={imageFit}
+      />
     );
   };
   const modalSize = isMobile ? '100%' : '70%';
@@ -62,7 +51,10 @@ export const PortfolioItem = ({ image, images, description, title, imagePreview,
       />
       <Modal
         opened={modalOpen}
-        onClose={() => setModalOpen(false)}
+        onClose={() => {
+          handleStepChange(0);
+          setModalOpen(false);
+        }}
         closeOnClickOutside={true}
         size={modalSize}
         centered={true}
@@ -77,17 +69,19 @@ export const PortfolioItem = ({ image, images, description, title, imagePreview,
         <div className="modalBody">
           <div style={{ width: isMobile ? 'initial' : '600px' }}>
             {maxSteps === 0 ? (
-              renderInside(image)
+              renderInside(image.imageToShow, image.imageFit)
             ) : (
               <>
                 <SwipeableViews
                   index={activeStep}
                   onChangeIndex={handleStepChange}
                   enableMouseEvents>
-                  {images.map((imageToShow, index) => (
-                    <div key={index}>
-                      {Math.abs(activeStep - index) <= 2 ? renderInside(imageToShow) : null}
-                    </div>
+                  {images.map(({ imageToShow, imageFit }, index) => (
+                    <>
+                      {Math.abs(activeStep - index) <= 2
+                        ? renderInside(imageToShow, imageFit, index)
+                        : null}
+                    </>
                   ))}
                 </SwipeableViews>
                 <MobileStepper
@@ -151,8 +145,16 @@ export const PortfolioItem = ({ image, images, description, title, imagePreview,
 };
 
 PortfolioItem.propTypes = {
-  image: PropTypes.string,
-  images: PropTypes.arrayOf(PropTypes.string),
+  image: PropTypes.shape({
+    imageToShow: PropTypes.string,
+    imageFit: PropTypes.string
+  }),
+  images: PropTypes.arrayOf(
+    PropTypes.shape({
+      imageToShow: PropTypes.string,
+      imageFit: PropTypes.string
+    })
+  ),
   imageFit: PropTypes.string,
   imagePreview: PropTypes.string,
   description: PropTypes.string,

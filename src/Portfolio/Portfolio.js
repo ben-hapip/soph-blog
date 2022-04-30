@@ -12,9 +12,6 @@ import infographicPreview from '../images/infographic/infographic-preview.jpg';
 import infographic from '../images/infographic/infographic.jpg';
 import magPreview from '../images/mag/mag-preview.jpg';
 import magImage from '../images/mag/mag.jpg';
-import panoPreview from '../images/pano/pano-preview.jpg';
-import pano from '../images/pano/pano.jpg';
-import panoCropped from '../images/pano/panocropped.jpg';
 import phonePreview from '../images/phone/phone-preview.jpg';
 import phone1 from '../images/phone/phone1.jpg';
 import phone2 from '../images/phone/phone2.jpg';
@@ -37,13 +34,38 @@ import { PortfolioItem } from '../PortfolioItem/PortfolioItem.js';
 
 export const Portfolio = () => {
   const theme = useMantineTheme();
-  const yonderImages = [yonder1, yonder2, yonder3, yonder4];
-  const sparqImages = [sparq1, sparq2, sparq3];
-  const phoneImages = [phone1, phone2];
-  const panoImages = [panoCropped, pano];
-  const candleImages = [candle1, candle2, candle3, candle4, candle5, candle6];
-  const socialImage = [social1, social2, social3];
-  //  TODO: PROBABLY WANT TO MAKE OBJECTS FOR EACH ITEM IN HERE TO BE ABLE TO HANDLE AND OBJECT FIT PER IMAGE......
+  const yonderImages = [
+    { imageToShow: yonder1, imageFit: 'contain' },
+    { imageToShow: yonder2, imageFit: 'cover' },
+    { imageToShow: yonder3, imageFit: 'contain' },
+    { imageToShow: yonder4, imageFit: 'contain' }
+  ];
+  const sparqImages = [
+    { imageToShow: sparq1, imageFit: 'contain' },
+    { imageToShow: sparq2, imageFit: 'cover' },
+    { imageToShow: sparq3, imageFit: 'cover' }
+  ];
+  const phoneImages = [
+    { imageToShow: phone1, imageFit: 'contain' },
+    { imageToShow: phone2, imageFit: 'contain' }
+  ];
+  // const panoImages = [
+  //   { imageToShow: panoCropped, imageFit: 'cover' },
+  //   { imageToShow: pano, imageFit: 'contain' }
+  // ];
+  const candleImages = [
+    { imageToShow: candle1, imageFit: 'contain' },
+    { imageToShow: candle2, imageFit: 'cover' },
+    { imageToShow: candle3, imageFit: 'contain' },
+    { imageToShow: candle4, imageFit: 'contain' },
+    { imageToShow: candle5, imageFit: 'contain' },
+    { imageToShow: candle6, imageFit: 'contain' }
+  ];
+  const socialImage = [
+    { imageToShow: social1, imageFit: 'contain' },
+    { imageToShow: social2, imageFit: 'contain' },
+    { imageToShow: social3, imageFit: 'contain' }
+  ];
   return (
     <>
       <div
@@ -77,25 +99,25 @@ export const Portfolio = () => {
         />
         <PortfolioItem
           imagePreview={magPreview}
-          image={magImage}
+          image={{ imageToShow: magImage, imageFit: 'contain' }}
           title="MAGAZINE SPREAD"
           description="Our assignment was to create a magazine spread about ourselves for a group project. The spread had to stay consistent to the overall theme of the magazine while also portraying who we are and showcasing our best pieces. "
           imageFit="cover"
         />
         <PortfolioItem
           imagePreview={infographicPreview}
-          image={infographic}
+          image={{ imageToShow: infographic, imageFit: 'contain' }}
           title="INFOGRAPHIC"
           description="For this project, we had to create a poster to explain something in graphic form. I made this infographic to show how plastic pollution is affecting our oceans. I wanted to keep it simple and minimal so the information is easy to understand and more impactful."
           imageFit="cover"
         />
-        <PortfolioItem
+        {/* <PortfolioItem
           imagePreview={panoPreview}
           images={panoImages}
           title="PANORAMA"
           description="We were tasked with taking a panoramic photo of our choice. When thinking of an idea for my panorama I decided to go to the annual Balloon Festival in Medora, and I spent the morning taking photos of the beautiful hot air balloons as they took off. The colors against the backdrop of the Badlands help the photo come alive."
           imageFit="contain"
-        />
+        /> */}
         <PortfolioItem
           imagePreview={candlePreview}
           images={candleImages}
@@ -105,17 +127,15 @@ export const Portfolio = () => {
         />
         <PortfolioItem
           imagePreview={foodPreview}
-          image={food}
+          image={{ imageToShow: food, imageFit: 'cover' }}
           title="FOOD PHOTOGRAPHY"
           description="I’m proud of this photograph because I feel it sells the product. The lighting and clarity make the smoothie bowl alluring as well as appealing. It makes a consumer almost taste the goodness of the contents and crave a smoothie bowl."
-          imageFit="cover"
         />
         <PortfolioItem
           imagePreview={posterPreview}
-          image={poster}
+          image={{ imageToShow: poster, imageFit: 'cover' }}
           title="SPRING SHOW POSTER"
           description="I wanted to portray a magical and lively design to encourage students, faculty and community members to attend our spring show. I chose a playful design because I love graphic design and hoped to incorporate how it makes me feel. I was happy with the positive vibe the poster sent."
-          imageFit="cover"
         />
         <PortfolioItem
           imagePreview={socialPreview}
