@@ -97,7 +97,7 @@ export const Contact = () => {
             {...form.getInputProps('message')}
             name="message"
           />
-          <Group position="right" mt="md">
+          <Group position="center" mt="md">
             <button
               disabled={isSending}
               className="submit-button"
