@@ -30,7 +30,7 @@ function App() {
         <BrowserRouter>
           <Navbar toggleTheme={toggleTheme}></Navbar>
           <Routes>
-            <Route path="/home" element={<Homepage />} />
+            <Route path="/" index={true} element={<Homepage />} />
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>

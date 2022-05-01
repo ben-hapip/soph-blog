@@ -18,7 +18,7 @@ function Navbar() {
       style={{
         backgroundColor: theme.colors.sophieNavTheme[0]
       }}>
-      <NavLink to="/home">
+      <NavLink to="/">
         <div style={{ marginLeft: 30, marginTop: 10, marginBottom: 10 }}>
           <img className="logo" src={logo}></img>
         </div>
@@ -74,7 +74,7 @@ function Navbar() {
           }}
           onClick={() => setOpen(false)}>
           <div onClick={() => setOpen(false)}>
-            <NavLink to="/home" className="mobileLink">
+            <NavLink to="/" className="mobileLink">
               home
             </NavLink>
           </div>
